@@ -33,23 +33,23 @@ public class Uppgift {
         //The Accounts class to ensure safe way to doing additions and ensure immutability.
         final Accounts accounts = new Accounts();
 
-        final Account account1 = new Account.AccountBuilder("Vijay")
+        final var account1 = new Account.AccountBuilder("Vijay")
                 .addAccountNumber(100)
                 .addAccountNumber(200)
                 .build();
 
-        final Account account2 = new Account.AccountBuilder("Vijay1")
+        final var account2 = new Account.AccountBuilder("Vijay1")
                 .addAccountNumber(300).addAccountNumber(400)
                 .build();
 
-        final Account account3 = new Account.AccountBuilder("Vijay2")
+        final var account3 = new Account.AccountBuilder("Vijay2")
                 .addAccountNumber(500)
                 .addAccountNumber(500) //duplicate account number.. will be ignored... by design.
                 .build();
 
         //Duplicate account (name exists).. this will be ignored. In real world, logging and proper message to user
         // would be conveyed or simply the account number will be added, depending on the requirement.
-        final Account account4 = new Account.AccountBuilder("Vijay1")
+        final var account4 = new Account.AccountBuilder("Vijay1")
                 .addAccountNumber(111)
                 .addAccountNumber(222)
                 .build();
@@ -64,7 +64,7 @@ public class Uppgift {
 
     private static void uppgift2(final String date) {
 
-        final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        final var dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         try {
             LocalDate.parse(date, dateTimeFormatter); // we only accept date in format as described in assignment.

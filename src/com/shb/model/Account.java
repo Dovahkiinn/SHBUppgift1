@@ -41,7 +41,7 @@ public class Account {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Account account = (Account) o;
+        var account = (Account) o;
         return Objects.equals(accountName, account.accountName);
     }
 
